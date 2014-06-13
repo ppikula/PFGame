@@ -17,4 +17,4 @@ cabal-version:       >=1.8
 executable PF
   main-is: PF.hs             
   -- other-modules:       
-  build-depends:       base ==4.6.*
+  build-depends:       sdl2, base ==4.6.*
