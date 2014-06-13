@@ -18,4 +18,4 @@ executable PF
   main-is:             Main.hs             
   hs-source-dirs:      src
   -- other-modules:       
-  build-depends:       sdl2 == 1.0.2, base ==4.6.*
+  build-depends:       SFML, base ==4.6.*

@@ -1,17 +1,20 @@
 import System.Environment
 
-import Graphics.UI.SDL as SDL
-import Foreign.C
+import Foreign.Ptr (nullPtr)
+
+import SFML.Audio
+import SFML.Graphics
+import SFML.Window
 
 main = do
-    SDL.init initFlagVideo
-    window <- create_window
-    renderer <- getRenderer window
-    --renderFillRect renderer (Ptr (Rect 0 0 800 600) )
-    renderPresent renderer
-    delay 5000
+    let ctxSettings = Just $ ContextSettings 24 8 0 1 2
+    wnd <- createRenderWindow (VideoMode 640 480 32) "SFML Haskell Demo" [SFDefaultStyle] ctxSettings
+    loop wnd
 
-create_window = do
-    title <- newCString "Test Window"
-    SDL.createWindow title SDL.windowPosCentered SDL.windowPosCentered 800 600 0
-
+loop wnd = do
+    display wnd
+    evt <- waitEvent wnd
+    case evt of
+        Nothing -> return ()
+        Just SFEvtClosed -> return ()
+        _ -> loop wnd
