@@ -15,6 +15,7 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 executable PF
-  main-is: PF.hs             
+  main-is:             Main.hs             
+  hs-source-dirs:      src
   -- other-modules:       
   build-depends:       sdl2, base ==4.6.*
