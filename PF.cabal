@@ -3,19 +3,19 @@
 
 name:                PF
 version:             0.1.0.0
--- synopsis:            
--- description:         
+-- synopsis:
+-- description:
 license:             BSD3
 license-file:        LICENSE
 author:              Pawel Pikula
 maintainer:          ppikula@gmail.com
--- copyright:           
+-- copyright:
 category:            Game
 build-type:          Simple
 cabal-version:       >=1.8
 
 executable PF
-  main-is:             Main.hs             
+  main-is:             Main.hs
   hs-source-dirs:      src
-  -- other-modules:       
-  build-depends:       SFML, base ==4.6.*
+  -- other-modules:
+  build-depends:      GLUT, OpenGL, base ==4.7.*
